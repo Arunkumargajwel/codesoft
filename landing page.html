@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Include Font Awesome CSS (you may need to adjust the URL based on your setup) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>Landing Page</title>
+  <style>
+    /* Reset some default browser styles */
+    body, h1, h2, p, ul, li {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4; /* Set a light background color for the body */
+    }
+
+    /* Header styles */
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    nav li {
+      margin-right: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      transition: color 0.3s ease-in-out;
+    }
+
+    nav a:hover {
+      color: #ff6600;
+    }
+
+    .search-icon {
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    /* Social media icons and consult button styles */
+    .header-icons {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+    }
+
+    .social-icons a,
+    .consult-button {
+      color: #fff;
+      margin: 0 10px;
+      font-size: 18px;
+      text-decoration: none;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .social-icons a:hover,
+    .consult-button:hover {
+      color: #ff6600;
+    }
+
+    /* Hero section styles */
+    .hero {
+      background-image: url("C:/Users/Lalit/Downloads/image1.jpg");
+      background-size: cover;
+      text-align: center;
+      padding: 100px 20px;
+      color: #333;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #000080; /* Set a custom color for the heading */
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      opacity: 0.8;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #000080;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .cta-button:hover {
+      background-color: #e55d00;
+    }
+
+    /* Features section styles */
+    .features {
+      background-color: #fff;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: #333; /* Set a custom color for the heading */
+    }
+
+    .features ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .features li {
+      margin: 0 20px;
+    }
+
+    /* Consultation form styles */
+    .consult-form {
+      background-color: #f9f9f9;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 5px;
+      text-align: center;
+      display: none;
+    }
+
+    .consult-form label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .consult-form input,
+    .consult-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .consult-form button {
+      background-color: #ff6600;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .consult-form button:hover {
+      background-color: #e55d00;
+    }
+
+    .thank-you-message {
+      color: #2ecc71; /* Green color for the thank you message */
+      font-weight: bold;
+      margin-top: 20px;
+      display: none;
+    }
+
+    /* Section styles */
+    .section {
+      display: none;
+    }
+
+    /* Footer styles */
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Social media icons and consult button section -->
+  <div class="header-icons">
+    <!-- Social media icons -->
+    <div class="social-icons">
+      <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <!-- Add more social media icons as needed -->
+    </div>
+
+    <!-- Request a Consult button -->
+    <a href="#" class="consult-button" onclick="showConsultForm()">Request a Consult</a>
+  </div>
+
+  <header>
+    <h1>Landing Page</h1>
+    <nav>
+      
+      <ul>
+        <li><a href="#" onclick="showSection('hero')">Home</a></li>
+        <li><a href="#" onclick="showSection('features')">Features</a></li>
+        <li><a href="#" onclick="showSection('pricing')">Pricing</a></li>
+
+        <!-- Add a search icon using Font Awesome -->
+      <i class="fas fa-search search-icon"></i>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero section" id="hero">
+    <h2>Welcome to our Awesome Product</h2>
+    <p>Discover the amazing features that will revolutionize your life!</p>
+    <a href="#" class="cta-button">Get Started</a>
+  </section>
+
+  <section class="features section" id="features">
+    <h2>Key Features</h2>
+    <ul>
+      <li>Feature 1: Smart Notifications</li>
+      <li>Feature 2: Collaborative workspace</li>
+      <li>Feature 3: Advanced security measures</li>
+    </ul>
+  </section>
+
+  <section class="pricing section" id="pricing">
+    <div class="features">
+      <h2>Pricing Plans</h2>
+      <ul>
+        <li>Plan 1: Basic Plan<br>
+
+          Price: $9.99/month<br>
+          Features:
+          Access to core product features.<br>
+          Limited storage space for individual users.<br>
+          Email support during business hours.<br></li>
+        <li>Plan 2: Pro Plan<br>
+
+          Price: $19.99/month<br>
+          Features:
+          Enhanced features including advanced collaboration tools.<br>
+          Increased storage capacity for team projects.<br>
+          Priority email and chat support with faster response times.<br></li>
+        <li>Plan 3: Enterprise Plan<br>
+
+          Price: Custom Quote<br>
+          Features:
+          Fully customizable package tailored to enterprise needs.<br>
+          Dedicated account manager for personalized support.<br>
+          Unlimited storage, advanced security features, and API access.<br>
+          24/7 priority support with guaranteed response times.<br></li>
+      </ul>
+    </div>
+  </section>
+
+
+
+
+  <!-- Consultation form -->
+  <div class="consult-form section" id="consultForm" style="display: none;">
+    <form id="consultationForm" onsubmit="submitConsultationForm(event)">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+    <p class="thank-you-message" id="thankYouMessage" style="display: none;">Thank you for your submission!</p>
+  </div>
+
+  <footer>
+    <p>
+      &copy; 2023 Your Company. All rights reserved.<br />
+    </p>
+  </footer>
+
+  <script>
+    function showConsultForm() {
+      var form = document.getElementById('consultForm');
+      form.style.display = 'block';
+    }
+
+    function submitConsultationForm(event) {
+      event.preventDefault(); // Prevent the form from submitting the traditional way
+
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var message = document.getElementById('message').value;
+
+      // You can customize this part to send the data to your server or perform other actions
+      console.log("Name: " + name);
+      console.log("Email: " + email);
+      console.log("Message: " + message);
+
+      // For now, let's just show a thank you message
+      document.getElementById('consultForm').style.display = 'none';
+      document.getElementById('thankYouMessage').style.display = 'block';
+    }
+
+    function showSection(sectionId) {
+      // Hide all sections
+      var sections = document.querySelectorAll('.section');
+      sections.forEach(function(section) {
+        section.style.display = 'none';
+      });
+
+      // Show the selected section
+      var selectedSection = document.getElementById(sectionId);
+      if (selectedSection) {
+        selectedSection.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+
+
